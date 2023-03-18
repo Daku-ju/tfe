@@ -1,0 +1,223 @@
+html, body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0%;
+}
+
+.title {
+    color: black;
+    font-family: trajan-pro-3, serif;
+    margin: 0%;
+    padding: 0%;
+
+    &--big{
+        font-size: 84px;
+    }
+
+    &--normal{
+        font-size: 63px;
+    }
+
+    &--thin{
+        font-size: 47px;
+    }
+    &--perso{
+        font-size: 27px;
+    }
+}
+
+
+.text {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    margin: 0%;
+    padding: 5px 0px 5px 0px;
+}
+
+.intro {
+    background-image: url(../assets/images/maison-rome.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    height: 100vh; 
+    position: relative;
+}
+
+.intro__img {
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: logo-intro 29s;
+}
+
+.intro__text{
+    -webkit-animation: 10s ease 0s normal forwards 1 anim-intro;
+    animation: 10s ease 0s normal forwards 1 anim-intro;
+    text-align: center;
+}
+
+.chap__img {
+    width: 20%;
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+}
+
+
+
+.chat {
+    border-radius: 20px;
+    border: solid 2px #FFDB1C;
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    background-color: whitesmoke;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.link {
+    background-color: #FFEC89;
+    color: black;
+    font-family: trajan-pro-3, serif;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 5px 20px 5px 20px;
+}
+
+.main {
+    height: 100vh;
+    position: relative;
+}
+
+.chambre {
+    background-image: url(../assets/images/chambre1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%; 
+}
+
+.cuisine {
+    background-image: url(../assets/images/cuisine.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%; 
+}
+
+.table {
+    background-image: url(../assets/images/table.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%; 
+}
+
+.chap__img--place {
+    left: 1%;
+}
+
+.food {
+    height: 30px;
+}
+
+.food1{
+    height: 20px;
+}
+
+.foods {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: flex-end;
+}
+
+.hide {
+    display: none;
+}
+.hidep{
+    display: none;
+}
+
+@media (orientation : portrait){
+    .hidep {
+        display: block;
+    }
+
+    .portrait {
+        height: 100vh;
+        background-color: #75161E;
+        color: whitesmoke;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+    }
+    .main {
+        display: none;
+    }
+}
+
+@media (min-width: 1000px) {
+    .chap__img{
+        width: 25%;
+    }
+
+    .chat {
+        left: 50%;
+        transform: translate(-50%);
+        margin: 0%;
+    }
+
+    .food1{
+        height: 40%;
+    }
+    
+    .food {
+        height: 50%;
+    }
+
+    .foods {
+        top: 47%;
+    }
+
+    .chap__img--place {
+        left: -2%;
+    }
+}
+
+// animation
+@keyframes anim-intro {
+    0% { opacity:0; }
+
+    66% { opacity:0;
+    color: #F0AFB5; }
+
+    100% { opacity:1; 
+    color: #75161E;}  
+}
+
+@-webkit-keyframes anim-intro {
+    0% { opacity:0; }
+
+    66% { opacity:0;
+    color: #F0AFB5; }
+
+    100% { opacity:1; 
+    color: #75161E;}
+}
+
+@keyframes logo-intro {
+    0% { opacity: 1;}
+    
+    10% { opacity: 0;}
+
+    100%{ opacity: 0;}
+}

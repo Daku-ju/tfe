@@ -1,0 +1,10 @@
+{ "aliment" : [
+    {
+        "miel" : "Le miel, il ne faut pas y toucher, c’est pour le repas de ce soir",
+        "pain" : "Une tranche de pain, c'est exactement ce que je voulais manger.",
+        "raisin" : "Une grappe de raisi c'est  exactement ce que je voulais manger.",
+        "oeuf" : "Un oeuf, il ne faut pas y toucher, c’est pour le repas de ce soir"
+    }
+    ]
+
+}
