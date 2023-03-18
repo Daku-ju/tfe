@@ -60,13 +60,15 @@ html, body {
 }
 
 .chap__img {
-    width: 20%;
+    width: 17%;
     position: absolute;
     bottom: 0%;
     left: 10%;
 }
 
-
+.chap__img--place {
+    left: 1%;
+}
 
 .chat {
     border-radius: 20px;
@@ -118,10 +120,6 @@ html, body {
     height: 100%; 
 }
 
-.chap__img--place {
-    left: 1%;
-}
-
 .food {
     height: 30px;
 }
@@ -149,6 +147,10 @@ html, body {
 @media (orientation : portrait){
     .hidep {
         display: block;
+
+        .title {
+            color: whitesmoke;
+        }
     }
 
     .portrait {
