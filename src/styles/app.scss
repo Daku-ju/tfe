@@ -33,16 +33,6 @@ html, body {
     font-size: 16px;
     margin: 0%;
     padding: 5px 0px 5px 0px;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgb(223, 219, 212); /* The typwriter cursor */
-    white-space: pre-line; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-
-
 }
 
 .intro {
@@ -74,7 +64,7 @@ html, body {
     position: absolute;
     bottom: 0%;
     left: 10%;
-    animation: intro-marcus 2s;
+    animation: intro-marcus 7s;
 
 }
 
@@ -109,13 +99,42 @@ html, body {
     height: 100vh;
     position: relative;
 }
-
+#chap2 {
+    background-color: #9ec6e2;
+    z-index: -3;
+    animation: colorchange 5s;
+}
 .chambre {
-    background-image: url(../assets/images/chambre1.jpg);
+    background-image: url(../assets/images/CHAMBRE.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%; 
+    z-index: 2;
+    animation: filtrecolor 5s;
+    filter: grayscale(20%);
+
+}
+
+.moon {
+    background-image: url(../assets/images/lune.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5%;
+    position: absolute;
+    width: 73%;
+    animation: moonset 3s;
+}
+
+.sun {
+    background-image: url(../assets/images/soleil.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5%;
+    position: absolute;
+    height: 42%;
+    width: 73%;
+    animation: sunrise 5s;
 }
 
 .cuisine {
@@ -257,13 +276,51 @@ html, body {
     }
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
+@keyframes moonset {
+    
+    from {
+        height: 42%;
+        opacity: 1;
+    }
+
+    to {
+        height: 70%;
+        opacity: 0;   
+    }
+}
+
+@keyframes sunrise {
+    
+    from {
+        height: 70%;
+        opacity: 0;   
+    }
+    20% {
+        height: 70%;
+        opacity: 0;    
+    }
+
+    to{
+        height: 42%;
+        opacity: 1;
+    }
+}
+
+@keyframes colorchange {
+    from {
+        background-color: #022A46;
+    }
+    to {
+        background-color: #9ec6e2;
+    }
+}
+
+@keyframes filtrecolor {
+    from {
+        filter: grayscale(80%);
+    }
+
+    to{
+        filter: grayscale(0%);
+    }
+}
