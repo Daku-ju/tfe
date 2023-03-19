@@ -33,6 +33,16 @@ html, body {
     font-size: 16px;
     margin: 0%;
     padding: 5px 0px 5px 0px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(223, 219, 212); /* The typwriter cursor */
+    white-space: pre-line; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+
+
 }
 
 .intro {
@@ -64,6 +74,8 @@ html, body {
     position: absolute;
     bottom: 0%;
     left: 10%;
+    animation: intro-marcus 2s;
+
 }
 
 .chap__img--place {
@@ -79,6 +91,8 @@ html, body {
     background-color: whitesmoke;
     left: 50%;
     transform: translate(-50%);
+    width: 450px;
+    //animation: intro-chat 4s;
 }
 
 .link {
@@ -216,10 +230,40 @@ html, body {
     color: #75161E;}
 }
 
-@keyframes logo-intro {
-    0% { opacity: 1;}
-    
-    10% { opacity: 0;}
+@keyframes intro-marcus {
+    0% {
+        left: -50%;
+    }
+    50% {
+        opacity: 0;
+    }
 
-    100%{ opacity: 0;}
+    100% {
+        left: 10%;
+        opacity: 1;
+    }
 }
+@keyframes intro-chat {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+    opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
