@@ -5,6 +5,30 @@
     --typo--perso-m :27px;
 }
 
+//reset
+button{
+    background-color: transparent;
+    border-style: none;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+button{
+    cursor: pointer;
+}
+
 html, body {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -64,9 +88,26 @@ html, body {
         background-image: url(../assets/images/maison-rome-m.jpg);
     }
 
-    .title--normal {
+    .title {
         text-align: center;
+        padding: 10px 0px 10px 0px;
     }
+
+    .link{
+        font-size: 24opx;
+        margin: 10px 0px 10px 0px;
+    }
+
+}
+
+.catch {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+
 
 }
 

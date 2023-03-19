@@ -85,6 +85,6 @@ for (let Food of Foods) {
             button.classList.remove("hide");
 
         }   
-    }
-    )}
+    })
+}
 
