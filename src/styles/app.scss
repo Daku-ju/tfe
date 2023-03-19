@@ -56,7 +56,7 @@ html, body {
     height: 100vh;
     position: relative;
 }
-
+//jeu
 //introduction
 .intro {
     background-image: url(../assets/images/maison-rome.jpg);
@@ -77,8 +77,14 @@ html, body {
 }
 
 .intro__text{
-    animation: anim-intro 10s;
+    animation : text-intro 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    border-right: 2px solid #FFE765; /* The typwriter cursor */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     text-align: center;
+    color: #75161E;
 }
 
 .intro__title {
@@ -108,7 +114,7 @@ html, body {
     border: solid 2px #FFDB1C;
     padding: 10px;
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     background-color: whitesmoke;
     left: 50%;
     transform: translate(-50%);
@@ -268,15 +274,39 @@ html, body {
         opacity:1; 
         font-size: var(--typo--normal-m);        
         color: #75161E;
-}  
+    }  
 }
+
+@keyframes text-intro{
+    from {
+        opacity: 0;
+        width: 0;
+        color: #F0AFB5; 
+    }
+    50% {
+        width: 0;
+        opacity: 1;
+        color: #F0AFB5; 
+    }
+
+    to {
+        width: 100%;
+        color: #75161E;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FFE765 }
+  }
 
 // chapitre 3 animation
 @keyframes intro-marcus {
     0% {
         left: -50%;
+        opacity: 0;
     }
-    50% {
+    40% {
         opacity: 0;
     }
 
