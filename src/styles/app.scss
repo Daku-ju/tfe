@@ -41,9 +41,11 @@ html, body {
     font-family: trajan-pro-3, serif;
     margin: 0%;
     padding: 0%;
+    
 
     &--big{
-        font-size: var(--typo--big-m )
+        font-size: var(--typo--big-m );
+        
     }
 
     &--normal{
@@ -82,23 +84,19 @@ html, body {
 }
 
 //landing page 
-.principaly {
+@media (orientation :portrait) {
+    .principaly {
 
-    .intro{
-        background-image: url(../assets/images/maison-rome-m.jpg);
-    }
-
-    .title {
-        text-align: center;
-        padding: 10px 0px 10px 0px;
-    }
-
-    .link{
-        font-size: 24opx;
-        margin: 10px 0px 10px 0px;
-    }
-
+        .intro{
+            background-image: url(../assets/images/maison-rome-m.jpg);
+        }
+    
+        .link{
+            font-size: 24px;
+        }
+    }  
 }
+
 
 .catch {
     display: flex;
@@ -106,10 +104,10 @@ html, body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 30%;
-
-
+    top: 25%;
+    padding: 0px 10px 0px 10px;
 }
+
 
 //jeu
 //introduction
@@ -120,6 +118,15 @@ html, body {
     background-size: contain;
     height: 100vh; 
     position: relative;
+
+    .title {
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+    }
+    .link{
+        margin: 10px 0px 10px 0px;
+    }
+    
 }
 
 .intro__img {
