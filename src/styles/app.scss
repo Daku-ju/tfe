@@ -122,9 +122,18 @@ html, body {
     .title {
         text-align: center;
         padding: 10px 0px 10px 0px;
+
+        &--perso {
+            text-align: left;
+        }
     }
+
     .link{
         margin: 10px 0px 10px 0px;
+    }
+
+    .text {
+        padding: 10px 0px 20px 0px;
     }
     
 }
@@ -254,6 +263,15 @@ html, body {
     align-items: flex-end;
 }
 
+.fin__button {
+    display: flex;
+
+    .link {
+        margin: 0px 20px 20px 0px;
+    }
+
+}
+
 
 // cacher
 .hide {
@@ -286,33 +304,33 @@ html, body {
     }
 }
 
-@media (min-width: 1000px) {
-    .chap__img{
-        width: 25%;
-    }
+@media (min-width: 700px) {
 
-    .chat {
-        left: 50%;
-        transform: translate(-50%);
-        margin: 0%;
+    .catch {    
+        top: 50%;
+        padding: 0px 10px 0px 10px;
+        left: 42%;
+        transform: translate(-42%, -50%);
     }
+}
 
-    .food1{
-        height: 40%;
-    }
-    
-    .food {
-        height: 50%;
+@media (min-height: 500px) and (orientation : landscape) {
+    .chap__img {
+        width: 20%;
     }
 
     .foods {
-        top: 47%;
+        top: 48%;
+        left: 57%;
     }
 
-    .chap__img--place {
-        left: -2%;
+    .food {
+        height: 35px;
+        padding: 0px 10px 0px 10px;
     }
 }
+
+
 
 // animation
 @keyframes logo {
