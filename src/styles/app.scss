@@ -3,6 +3,7 @@
     --typo--normal-m :63px;
     --typo--thin-m :47px;
     --typo--perso-m :27px;
+    --typo--perso-p :35px;
 }
 
 //reset
@@ -66,6 +67,10 @@ html, body {
     font-size: 16px;
     margin: 0%;
     padding: 5px 0px 5px 0px;
+
+    /*&--anim {
+        animation: text-anim 2s;
+    }*/
 }
 
 .link {
@@ -118,6 +123,7 @@ html, body {
     background-size: contain;
     height: 100vh; 
     position: relative;
+    background-color: #FFC7CC;
 
     .title {
         text-align: center;
@@ -167,38 +173,52 @@ html, body {
 }
 
 //image de marcus
-.chap__img {
-    width: 17%;
-    position: absolute;
-    bottom: 0%;
-    left: 10%;
-    animation: intro-marcus 7s;
 
+.chap {
+    &__img {
+        width: 17%;
+        position: absolute;
+        bottom: 0%;
+        left: 10%;
+
+        &--intro {
+            animation: intro-marcus 3s;
+        }
+        &--place {
+            left: 1%
+        }
+
+        &--entree {
+            animation: entree-marcus 2s;
+        }
+    }
 }
 
-.chap__img--place {
-    left: 1%;
-}
 
 .chat {
     border-radius: 20px;
     border: solid 2px #FFDB1C;
     padding: 10px;
     position: absolute;
-    bottom: 30px;
+    bottom: 17%;
     background-color: whitesmoke;
     left: 50%;
     transform: translate(-50%);
-    width: 450px;
-    //animation: intro-chat 4s;
+    width: 440px;
+
+    &--intro {
+        animation: intro-chat 3s;
+    }
+
+    &--entree {
+        animation: entree-chat 2s; 
+    }
+
 }
 
+
+
 //fond background +soleil/lune
-#chap2 {
-    background-color: #9ec6e2;
-    z-index: -3;
-    animation: colorchange 5s;
-}
 .chambre {
     background-image: url(../assets/images/chambrejour.png);
     background-repeat: no-repeat;
@@ -206,16 +226,22 @@ html, body {
     background-size: cover;
     height: 100%; 
     z-index: 2;
+    background-color: #9ec6e2;
 }
+
+.chambre--intro {
+    animation: colorchange 5s;
+}
+
 
 .moon {
     background-image: url(../assets/images/lune.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 5%;
+    background-size: 20%;
     position: absolute;
     width: 73%;
-    animation: moonset 3s;
+    animation: moonset 2s;
 }
 
 .sun {
@@ -226,7 +252,7 @@ html, body {
     position: absolute;
     height: 42%;
     width: 73%;
-    animation: sunrise 5s;
+    animation: sunrise 3s;
 }
 
 .cuisine {
@@ -240,7 +266,7 @@ html, body {
 .table {
     background-image: url(../assets/images/table.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:bottom center;
     background-size: cover;
     height: 100%; 
 }
@@ -248,6 +274,16 @@ html, body {
 // ele mini jeu
 .food {
     height: 30px;
+    padding: 0px 5px 0px 5px;
+
+}
+
+.food:hover {
+    transform: scale(1.2);
+}
+
+.food :active {
+    filter: brightness(130%);
 }
 
 .food1{
@@ -256,11 +292,18 @@ html, body {
 
 .foods {
     display: flex;
+    align-items: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 27%;
+    left: 54%;
     transform: translate(-50%, -50%);
     align-items: flex-end;
+    
+    animation: food-arrive 3s;
+}
+
+.food-disabled:hover {
+    transform: scale(1);
 }
 
 .fin__button {
@@ -325,12 +368,53 @@ html, body {
     }
 
     .food {
-        height: 35px;
+        height: 45px;
         padding: 0px 10px 0px 10px;
+    }
+    .title--perso {    
+        font-size: var(--typo--perso-p);
+    }
+
+    .text, .link {
+        font-size: 20px;
+    }
+
+    .chat {
+        width: 650px;
+        bottom: 15%;
+        
     }
 }
 
+@media (min-height: 500px), (min-width:1000px) and (orientation : landscape) {
+    .chat {
+        bottom: 15%;
+    }
 
+    .foods {
+        top: 39%;
+    }
+
+    @keyframes entree-chat {
+        100% {
+        bottom: 15%;
+        }
+    }
+}
+
+@media (min-height: 1000px), (min-width:1300px) and (orientation : landscape) {
+    .chat {
+        bottom: 5%;
+
+        &--entree {
+            animation: entree-chat 2s; 
+        }
+    }
+
+    .foods {
+        top: 34%;
+    }
+}
 
 // animation
 @keyframes logo {
@@ -378,7 +462,7 @@ html, body {
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #FFE765 }
-  }
+}
 
 // chapitre 3 animation
 @keyframes intro-marcus {
@@ -395,28 +479,65 @@ html, body {
         opacity: 1;
     }
 }
-@keyframes intro-chat {
-    0% {
-        opacity: 0;
-    }
 
-    50% {
+@keyframes entree-marcus {
+    0% {
+        left: -50%;
         opacity: 0;
     }
 
     100% {
+        left: 10%;
+        opacity: 1;
+    }
+}
+
+@keyframes intro-chat {
+    0% {
+        opacity: 0;
+        bottom: -30%;
+    }
+
+    80% {
+        opacity: 0;
+        bottom: -30%;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 10%;
+    }
+}
+
+@keyframes entree-chat {
+    0% {
+        opacity: 0;
+        bottom: -30%;
+    }
+
+    50% {
+        opacity: 0;
+        bottom: -30%;
+    }
+
+    100% {
     opacity: 1;
+    bottom: 17%;
     }
 }
 
 @keyframes moonset {
     
-    from {
+    0% {
+        height: 42%;
+        opacity: 1;
+    }
+    10% {
         height: 42%;
         opacity: 1;
     }
 
-    to {
+    100% {
         height: 70%;
         opacity: 0;   
     }
@@ -445,5 +566,29 @@ html, body {
     }
     to {
         background-color: #9ec6e2;
+    }
+}
+
+@keyframes text-anim {
+    from {
+        opacity: 0;
+        color: #FFDB1C;
+    }
+
+    to {
+        opacity: 1;
+        color: #000000;
+    }
+}
+
+@keyframes food-arrive {
+    0% {
+        opacity: 0;
+        left: -50%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 54%;
     }
 }
